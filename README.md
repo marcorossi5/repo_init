@@ -10,3 +10,10 @@ file in the same directory of the `Dockerfile` to work.
 
 :warning: Note: remember to review the code to replace the template fields like
 `<template>` with the correct values.
+
+In order to add requirements packages with poetry from a `requirements.txt` file
+in one command, use:
+
+```bash
+cat path/to/requirements.txt | xargs poetry add
+```
