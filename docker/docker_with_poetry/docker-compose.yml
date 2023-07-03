@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  template-image:
+    image: <template-image-name>
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: prod
+    ports:
+      - 5001:5001
+    volumes:
+      - ../src:/home/ai
