@@ -3,6 +3,11 @@ FROM python:3.11 AS base
 LABEL maintainer="Marco Rossi <rssmrc.11@gmail.com>"
 
 ENV POETRY_VERSION=1.5.1
+# when the VIRTUAL_ENV variable is set, poetry thinks that a venv is
+# active and does not try to create a new one. A similar behavior can
+# be obtained by setting the following poetry configuration:
+# POETRY_VIRTUALENVS_CREATE=false
+# the second option is recommended
 ENV VIRTUAL_ENV=/opt/venv
 ENV PATH=$ENV_PATH/bin:$PATH
 
